@@ -1,6 +1,7 @@
 package com.ibrahimyengue.hibernateOneToOnemapping.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -21,9 +22,9 @@ public class Student {
     @Column(name="email")
     private String email;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "instructor_id", referencedColumnName = "id")
-    private Set<Instructor> instructors;
+    private Set<Instructor> instructors = new HashSet<Instructor>();
 
     public Student() {
 

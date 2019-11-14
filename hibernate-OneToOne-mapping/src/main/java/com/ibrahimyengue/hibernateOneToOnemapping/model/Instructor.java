@@ -39,7 +39,7 @@ public class Instructor {
     @JoinColumn(name="instructor_detail_id", referencedColumnName = "id")
     private InstructorDetail instructorDetail;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="student_id", referencedColumnName = "id")
     private Set<Student> students;
 
